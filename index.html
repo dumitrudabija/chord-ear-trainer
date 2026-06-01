@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#120b17">
+    <title>Chord Ear Trainer</title>
+    <link rel="manifest" href="manifest.webmanifest">
+    <link rel="icon" href="icons/icon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="icons/icon-192.png">
+    <link rel="stylesheet" href="styles.css?v=19">
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="stage" aria-labelledby="app-title">
+        <div class="title-row">
+          <div>
+            <p class="eyebrow">Browser ear training</p>
+            <h1 id="app-title">Chord Ear Trainer</h1>
+          </div>
+          <div class="score-card" aria-live="polite">
+            <span>Score</span>
+            <strong id="score">0 / 0</strong>
+          </div>
+        </div>
+
+        <aside class="character-card" aria-label="Current session owner">
+          <img id="character-image" src="assets/level1.png" alt="Nia, First Chorus">
+          <div class="character-copy">
+            <span id="character-tier">Level 1 owner</span>
+            <strong id="character-name">Nia, First Chorus</strong>
+            <p id="character-description">Early ears, clean instincts, learning to hear the center before the colors arrive.</p>
+          </div>
+        </aside>
+
+        <div class="level-panel" aria-label="Difficulty level">
+          <button class="level-button active" type="button" data-level="1">
+            <img class="level-owner-thumb" src="assets/level1.png" alt="">
+            <span>Level 1</span>
+            <small>First Chorus</small>
+          </button>
+          <button class="level-button" type="button" data-level="2">
+            <img class="level-owner-thumb" src="assets/level2.png" alt="">
+            <span>Level 2</span>
+            <small>The Changes</small>
+          </button>
+          <button class="level-button" type="button" data-level="3">
+            <img class="level-owner-thumb" src="assets/level3.png" alt="">
+            <span>Level 3</span>
+            <small>After Hours</small>
+          </button>
+        </div>
+
+        <div class="play-panel">
+          <div class="round-info">
+            <span id="level-label">Level 1: triads</span>
+            <strong id="round-label">Ready</strong>
+          </div>
+
+          <div class="speaker" aria-hidden="true">
+            <div class="speaker-cone"></div>
+            <div class="wave wave-one"></div>
+            <div class="wave wave-two"></div>
+            <div class="wave wave-three"></div>
+          </div>
+
+          <p id="prompt" class="prompt">Start a round, listen to the chord, then choose its quality.</p>
+
+          <div class="controls">
+            <button id="start-button" class="primary-button" type="button">Start</button>
+            <button id="replay-button" class="icon-button" type="button" disabled aria-label="Replay chord" title="Replay chord">
+              <span aria-hidden="true">Replay</span>
+            </button>
+            <button id="next-button" class="secondary-button" type="button" disabled>Next Round</button>
+          </div>
+        </div>
+
+        <div id="answers" class="answer-grid" aria-label="Answer options"></div>
+        <p id="feedback" class="feedback" aria-live="polite"></p>
+        <section id="validation-panel" class="validation-panel hidden" aria-labelledby="validation-title">
+          <div class="validation-copy">
+            <h2 id="validation-title">Round validation</h2>
+            <p id="validation-summary"></p>
+          </div>
+          <div id="staff" class="staff" aria-label="Sounded notes on grand staff"></div>
+          <dl class="validation-details">
+            <div>
+              <dt>Notes</dt>
+              <dd id="note-list"></dd>
+            </div>
+            <div>
+              <dt>Intervals</dt>
+              <dd id="interval-list"></dd>
+            </div>
+            <div>
+              <dt>Check</dt>
+              <dd id="formula-check"></dd>
+            </div>
+          </dl>
+        </section>
+        <p id="pwa-status" class="pwa-status" aria-live="polite">Offline cache pending</p>
+        <p class="audio-credit">
+          Piano samples: <a href="https://archive.org/details/SalamanderGrandPianoV3" rel="noopener noreferrer">Salamander Grand Piano</a> by Alexander Holm, used under <a href="https://creativecommons.org/licenses/by/3.0/" rel="noopener noreferrer">CC BY 3.0</a>.
+        </p>
+      </section>
+    </main>
+
+    <script src="theory.js?v=19" defer></script>
+    <script src="app.js?v=19" defer></script>
+  </body>
+</html>
